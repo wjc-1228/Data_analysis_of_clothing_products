@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>服装数据分析报告</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 30px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+        }
+        h3 {
+            color: #555;
+        }
+        .summary-box {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .stat-item {
+            text-align: center;
+            min-width: 150px;
+            margin: 10px;
+        }
+        .stat-number {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2980b9;
+        }
+        .stat-label {
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+        .img-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .img-container img {
+            max-width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 12px;
+            color: #aaa;
+            text-align: center;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📊 Amazon数据分析报告</h1>
+    <p>基于 Eco-Amazom 数据集，经过数据清洗后获得 48,955 条有效服装商品数据，本报告从商品表现、价格分布、用户反馈等多个维度展开深入分析，旨在为业务决策提供客观、可靠的数据支持。</p>
+
+    <div class="summary-box">
+        <div class="stat-item">
+            <div class="stat-number">48,955</div>
+            <div class="stat-label">商品总数</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">20</div>
+            <div class="stat-label">主要类别</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">19,062</div>
+            <div class="stat-label">店铺数量</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">$39.27</div>
+            <div class="stat-label">平均价格</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">4.14</div>
+            <div class="stat-label">平均评分</div>
+        </div>
+    </div>
+
+    <h2>1. 类别分析</h2>
+    <p><strong>AMAZON FASHION 类别：</strong>商品数量和总评论数最多分别为4,7000+和13,644,664，该类别无疑是AMAZON主流；总体平均价格为$39.4，价格区间跨度极大（$10-$300）。但低价商品（<$25）的评分显著拉低了整体表现。<br>
+    <strong>Tools & Home Improvement 类别：</strong>平均评分最高（4.35），商品平均价格为$30.6），视频渗透率高达78%。高价值、功能型商品更需要视频来展示使用场景，从而提升用户信任，建议新进入该品类的卖家标配高质量视频。<br>
+    <strong>评分最低类别：</strong>“Novelty & More”类别评分仅3.89，价格偏低（平均$22）。低价新奇商品质量参差不齐是主因，建议该类别卖家加强品控，并通过视频突出趣味性和使用效果来弥补质量短板。<br>
+    <div class="img-container"><img src="D:/workspace/Data_analysis_of_clothing_products/report_images/类别分析.png" alt="类别分析"></div>
+
+    <h2>2. 店铺分析</h2>
+    <p><strong>头部店铺画像：</strong>在前20家店铺中，呈现出三种不同的经营路线：Nike、Adidas等品牌旗舰店通过大量铺货取胜，商品数量分别达到457和454件，遥遥领先；Amazon Essentials则以爆款策略见长，商品数虽不及前两者，却收获了最高的评论数296,414条，反映出其巨大的市场热度；而Simple Joys by Carter's走的是精品路线，商品数和评论数均不突出，但凭借4.67的评分成为口碑冠军。<br>
+    <strong>店铺评分与商品数量关系：</strong>整体上店铺评分与商品均价呈弱正相关（相关系数0.23），但存在一批“性价比店铺”——均价低且评分高。这些店铺主要经营基础款服饰（如T恤、袜子），通过高性价比获得用户青睐，说明基础款赛道仍有通过极致性价比切入的空间。</p>
+    <div class="img-container"><img src="D:/workspace/Data_analysis_of_clothing_products/report_images/店铺分析.png" alt="店铺分析图"></div>
+
+    <h2>3. 价格分析</h2>
+    <strong>价格区间与商品数量：</strong>大众市场定位：整体价格集中在10-40美元（约合人民币70-280元），属于服装类目的中低价格带，主打日常基础款和大众消费群体。主力价格带为30-40美元：该区间商品数量最多，说明这一价位可能是消费者接受度最高、转化率较好的“黄金价格带”，同时也是商家布局最密集的竞争红海。<br>
+   <div class="img-container"><img src="D:/workspace/Data_analysis_of_clothing_products/report_images/价格区间分析.png" alt="价格区间分析"></div>
+
+    <h2>4. 商品特征词云</h2>
+    <p><strong>词云分析：</strong>这些高频词揭示了消费者在服装选购中的核心诉求：以女性用户为主，她们最看重穿着的舒适感与面料品质（soft/comfortable/cotton），同时尺码合身度（size）是影响购买决策的关键；此外，易打理性（wash）和设计美感（design）同样被频繁讨论，说明一件“完美”（perfect）的衣服需要在舒适、合身、实用与时尚之间取得平衡。简言之，只有同时满足这些维度的产品，才能真正赢得市场青睐。<br>
+    <strong>特征词与评分关联：</strong>提及“perfect fit”的商品平均评分高达4.6，而提及“too small”的商品平均评分仅3.2，建议卖家在标题和描述中强调“合身”信息，并提供详细尺码表。<br>
+    <strong>风格趋势：</strong>词云中“casual”为高频，说明休闲风格是平台主流。</p>
+   <div class="img-container"><img src="D:/workspace/Data_analysis_of_clothing_products/report_images/商品词云分析.png" alt="商品特征词云"></div>
+
+    <h2>5. 视频对商品表现的影响</h2>
+    <p><strong>视频效果差异：</strong>视频对商品的影响显著：有视频的商品平均评论数高出无视频167%，评分也略高。视频通过动态展示商品细节，降低用户决策门槛，有效提升购买信任与转化率，是商家建立口碑、拉动复购的重要工具。<br>
+    <strong>视频对价格敏感度的影响：</strong>对于价格 >$50 的商品，有视频的转化率（以评论数为代理指标）比无视频高 2.3 倍，而低价商品这一倍数仅为 1.5。说明高价商品更需要视频来证明其价值。</p>
+    <div class="img-container"><img src="D:/workspace/Data_analysis_of_clothing_products/report_images/视频分析.png" alt="视频分析"></div>
+    <div class="img-container"><img src="D:/workspace/Data_analysis_of_clothing_products/report_images/评论数分布.png" alt="评论分布"></div>
+
+    <h2>6. 核心结论与建议</h2>
+    <p>
+        <strong>选品和定价：</strong>30到40美元这个区间商品最多，说明大家买衣服最愿意花这个钱，咱们可以把主力款式放在30到50美元，既有利润也好做出质感。想拿来做引流的款，比如T恤、袜子这些基础款，可以定在20到25美元，但质量一定得把关，评论里很多人提到“soft”，说明便宜也要舒服才行。超过50美元的东西用户就会犹豫了，这时候得靠视频把“凭什么卖这么贵”说清楚，不然不好卖。
+        <br>
+        <strong>描述怎么写：</strong>词云里出现最多的词是soft、comfortable、cotton、size、wash、design，说明大家最在乎的就是这些。所以标题和五点描述里要多用这些词，比如“Soft Cotton T-Shirt”、“Comfortable for Daily Wear”。尺码这块特别容易出问题，好多人给差评就是因为“too small”，咱们可以在尺码表里加一句人话，比如“身高175、体重70公斤穿L码合适”，这样用户心里更有数。还有不少人担心洗了会不会变形，可以在描述里写“机洗不变形”或者“不缩水”，让用户买得放心。
+        <br>
+        <strong>视频怎么做：</strong>数据挺直接的——有视频的商品比没视频的平均多出167%的评论数，这个差距真不小。我的想法是分三种做法：便宜的衣服（30美元以下）不用拍太复杂，找个真人穿上看效果，搭几套日常穿搭就行；中等价位的（30到50美元）可以拍点细节，比如面料摸着啥手感、走线工不工整，再换几个场景展示（上班穿、逛街穿、家里穿）；贵的衣服（50美元以上）就得用心做了，可以拍点面料测试或者讲讲设计想法，让用户觉得这钱花得值。
+        <br>
+        <strong>店铺怎么运营：</strong>前几名店铺给了咱们几种思路：Nike那种大量铺货的不太适合新手；Amazon Essentials那种用一两款爆款冲评论，再带动店里其他东西卖，这条路咱们可以试试；Simple Joys专注做小孩衣服，商品不多但评分高，说明盯住一个小人群做精也是一种办法。另外评论里“perfect fit”这个词的评分特别高，咱们可以在包裹里放张小卡片，送个优惠券换点真实的好评，慢慢攒口碑。
+        <br>
+        <strong>平时盯什么数据：</strong>建议每周抽空盯着这几个东西：每个价格带的评分有没有掉、有视频的款评论涨得快不快、差评里“too small”这类话多不多。要是发现哪个款尺码问题集中冒出来，赶紧去改尺码表或者加说明，手快一点能少亏不少。
+    </p>
+
+    <div class="footer">
+        报告生成时间：2026-02-28 15:32 | 数据分析师：王家诚
+    </div>
+</div>
+</body>
+</html>
