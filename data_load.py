@@ -53,4 +53,5 @@ def _write_batch(batch, writer, parquet_path, is_first):
 
 input_file = 'D:/workspace/Data_analysis_of_clothing_products/meta_Clothing_Shoes_and_Jewelry.jsonl'
 output_file = 'D:/workspace/Data_analysis_of_clothing_products/meta.parquet'
-jsonl_to_parquet(input_file, output_file, chunk_size=50000)  
+
+jsonl_to_parquet(input_file, output_file, chunk_size=100000)  
